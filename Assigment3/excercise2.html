@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script2.js"></script>
+    <title>Khảo sát đánh giá giáo viên</title>
+</head>
+<body>
+    <h2>Khảo sát đánh giá giáo viên</h2>
+    <button onclick="window.location.href='excercise1.html'">bài tập 1</button>
+    <div style="margin-bottom: 10px;">
+        <label for="subjectName">Tên môn học:</label>
+        <input id="subjectName" type="text" placeholder="Nhập tên môn học" required>
+    </div>
+    <div style="margin-bottom: 10px;">
+        <label for="teacherName">Tên giáo viên:</label>
+        <input id="teacherName" type="text" placeholder="Nhập tên giáo viên" required>
+    </div>
+    <div style="margin-bottom: 10px;">
+        <label for="studentName">Họ tên sinh viên:</label>
+        <input id="studentName" type="text" placeholder="Nhập họ tên sinh viên" required>
+    </div>
+    <div style="margin-bottom: 10px;">
+        <label for="submitTime">Ngày giờ gửi form: <span id="date"></span></label>
+    </div>
+
+    <table border="1">
+        <tr>
+            <th>Tiêu chí</th>
+            <th>1(Rất kém)</th>
+            <th>2(Kém)</th>
+            <th>3(Trung bình)</th>
+            <th>4(Tốt)</th>
+            <th>5(Rất tốt)</th>
+        </tr>
+        <tr>
+            <td>Khả năng truyền đạt</td>
+            <td><input type="radio" name="transmission" value="1" onchange="avgScore()"></td>
+            <td><input type="radio" name="transmission" value="2" onchange="avgScore()"></td>
+            <td><input type="radio" name="transmission" value="3" onchange="avgScore()"></td>
+            <td><input type="radio" name="transmission" value="4" onchange="avgScore()"></td>
+            <td><input type="radio" name="transmission" value="5" onchange="avgScore()"></td>
+        </tr>
+        <tr>
+            <td>Thái độ giảng viên</td>
+            <td><input type="radio" name="attitude" value="1" onchange="avgScore()"></td>
+            <td><input type="radio" name="attitude" value="2" onchange="avgScore()"></td>
+            <td><input type="radio" name="attitude" value="3" onchange="avgScore()"></td>
+            <td><input type="radio" name="attitude" value="4" onchange="avgScore()"></td>
+            <td><input type="radio" name="attitude" value="5" onchange="avgScore()"></td>
+        </tr>
+        <tr>
+            <td>Sự tương tác với sinh viên</td>
+            <td><input type="radio" name="interaction" value="1" onchange="avgScore()"></td>
+            <td><input type="radio" name="interaction" value="2" onchange="avgScore()"></td>
+            <td><input type="radio" name="interaction" value="3" onchange="avgScore()"></td>
+            <td><input type="radio" name="interaction" value="4" onchange="avgScore()"></td>
+            <td><input type="radio" name="interaction" value="5" onchange="avgScore()"></td>
+        </tr>
+        <tr>
+            <td>Kiến thức chuyên môn</td>
+            <td><input type="radio" name="knowledge" value="1" onchange="avgScore()"></td>
+            <td><input type="radio" name="knowledge" value="2" onchange="avgScore()"></td>
+            <td><input type="radio" name="knowledge" value="3" onchange="avgScore()"></td>
+            <td><input type="radio" name="knowledge" value="4" onchange="avgScore()"></td>
+            <td><input type="radio" name="knowledge" value="5" onchange="avgScore()"></td>
+        </tr>
+        <tr>
+            <td>Tổ chức bài giảng</td>
+            <td><input type="radio" name="organization" value="1" onchange="avgScore()"></td>
+            <td><input type="radio" name="organization" value="2" onchange="avgScore()"></td>
+            <td><input type="radio" name="organization" value="3" onchange="avgScore()"></td>
+            <td><input type="radio" name="organization" value="4" onchange="avgScore()"></td>
+            <td><input type="radio" name="organization" value="5" onchange="avgScore()"></td>
+        </tr>
+        <tr>
+            <td>Khả năng giải đáp thắc mắc</td>
+            <td><input type="radio" name="qna" value="1" onchange="avgScore()"></td>
+            <td><input type="radio" name="qna" value="2" onchange="avgScore()"></td>
+            <td><input type="radio" name="qna" value="3" onchange="avgScore()"></td>
+            <td><input type="radio" name="qna" value="4" onchange="avgScore()"></td>
+            <td><input type="radio" name="qna" value="5" onchange="avgScore()"></td>
+        </tr>
+        <tr>
+            <td>Sự nhiệt tình</td>
+            <td><input type="radio" name="enthusiasm" value="1" onchange="avgScore()"></td>
+            <td><input type="radio" name="enthusiasm" value="2" onchange="avgScore()"></td>
+            <td><input type="radio" name="enthusiasm" value="3" onchange="avgScore()"></td>
+            <td><input type="radio" name="enthusiasm" value="4" onchange="avgScore()"></td>
+            <td><input type="radio" name="enthusiasm" value="5" onchange="avgScore()"></td>
+        </tr>
+        <tr>
+            <td>Thời gian giảng dạy phù hợp</td>
+            <td><input type="radio" name="timetable" value="1" onchange="avgScore()"></td>
+            <td><input type="radio" name="timetable" value="2" onchange="avgScore()"></td>
+            <td><input type="radio" name="timetable" value="3" onchange="avgScore()"></td>
+            <td><input type="radio" name="timetable" value="4" onchange="avgScore()"></td>
+            <td><input type="radio" name="timetable" value="5" onchange="avgScore()"></td>
+        </tr>
+        <tr>
+            <td>Thái độ đối với câu hỏi của sinh viên</td>
+            <td><input type="radio" name="attitudeToStudents" value="1" onchange="avgScore()"></td>
+            <td><input type="radio" name="attitudeToStudents" value="2" onchange="avgScore()"></td>
+            <td><input type="radio" name="attitudeToStudents" value="3" onchange="avgScore()"></td>
+            <td><input type="radio" name="attitudeToStudents" value="4" onchange="avgScore()"></td>
+            <td><input type="radio" name="attitudeToStudents" value="5" onchange="avgScore()"></td>
+        </tr>
+        <tr>
+            <td>Ứng dụng công nghệ trong giảng dạy</td>
+            <td><input type="radio" name="technology" value="1" onchange="avgScore()"></td>
+            <td><input type="radio" name="technology" value="2" onchange="avgScore()"></td>
+            <td><input type="radio" name="technology" value="3" onchange="avgScore()"></td>
+            <td><input type="radio" name="technology" value="4" onchange="avgScore()"></td>
+            <td><input type="radio" name="technology" value="5" onchange="avgScore()"></td>
+        </tr>
+        <tr>
+            <td>Khả năng khuyến khích tư duy sáng tạo</td>
+            <td><input type="radio" name="creativity" value="1" onchange="avgScore()"></td>
+            <td><input type="radio" name="creativity" value="2" onchange="avgScore()"></td>
+            <td><input type="radio" name="creativity" value="3" onchange="avgScore()"></td>
+            <td><input type="radio" name="creativity" value="4" onchange="avgScore()"></td>
+            <td><input type="radio" name="creativity" value="5" onchange="avgScore()"></td>
+        </tr>
+    </table>
+    <div style="margin-top: 10px;"><b>Trung bình điểm của giảng viên: </b><span id="score"></span></div>
+    <button style="margin-top: 10px;" type="submit" onclick="submitForm()">Gửi khảo sát</button>
+    <h2>Dữ liệu khảo sát dưới dạng JSON:</h2>
+    <div id="jsonData"></div>
+</body>
+</html>
